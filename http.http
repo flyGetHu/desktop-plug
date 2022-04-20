@@ -1,0 +1,13 @@
+GET http://localhost:3000
+
+### 获取本机串口列表
+GET  http://localhost:3000/v1/scale/ports
+
+### 打开指定串口并开始读数
+GET  http://127.0.0.1:3000/v1/scale/open?comPort=com1
+
+### 关闭当前电子秤
+GET  http://127.0.0.1:3000/v1/scale/close
+
+### 获取电子秤读数
+GET http://127.0.0.1:3000/v1/scale/weight

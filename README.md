@@ -1,5 +1,7 @@
-# 注意事项
+# Project Title
 
-    - go build //打包的程序会后台开启窗口
-    - go build -ldflags "-H windowsgui" 打包的程序 后台执行
-    - 打包的程序必须携带bin目录下文件并且保持同目录
+增强浏览器与硬件设备交互
+
+## Getting Started
+
+本项目起初是为了为使浏览器可以进行静默打印 PDF 文件,后续添加了对串口读取功能,完成电子称数据解码

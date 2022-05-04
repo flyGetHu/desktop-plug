@@ -68,24 +68,13 @@ func scaleWeight(writer http.ResponseWriter, _ *http.Request) {
 		common.Result{Msg: "未打开相应电子秤串口,无法读取数据!"}.Error(writer)
 		return
 	}
-	var weightBegin = -1.0
-	for {
-		weightBegin = common.ScaleWeight
-		if weightBegin == -1 {
-			common.Result{Msg: "读取电子秤错误,请检查电子秤是否正确链接!"}.Error(writer)
-			return
-		}
-		//延迟指定毫秒数再获取一次读数,两次读数一致再返回
-		//可以做到电子秤读数稳定
-		after := time.After(time.Millisecond * 100)
-		<-after
-		weightEnd := common.ScaleWeight
-		if weightEnd == weightBegin {
-			break
-		}
-	}
-	common.InfoLog.Println("获取重量成功:", weightBegin)
-	common.Result{Data: weightBegin}.Success(writer)
+	//延迟指定毫秒数再获取一次读数,两次读数一致再返回
+	//可以做到电子秤读数稳定
+	after := time.After(time.Millisecond * 100)
+	<-after
+
+	common.InfoLog.Println("获取重量成功:", common.ScaleWeight)
+	common.Result{Data: common.ScaleWeight}.Success(writer)
 }
 
 //电子秤读数读取临时存放

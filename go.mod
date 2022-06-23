@@ -1,6 +1,6 @@
 module bailidaming.com/anjun/destop
 
-go 1.17
+go 1.18
 
 require github.com/satori/go.uuid v1.2.1-0.20181028125025-b2ce2384e17b
 

@@ -1,6 +1,6 @@
 # Project Title
 
-增强浏览器与硬件设备交互
+增强浏览器与硬件设备交互 现支持 电子秤+打印机
 
 ## Getting Started
 
